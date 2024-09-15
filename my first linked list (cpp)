@@ -37,11 +37,24 @@ cout << "tail : "<< tail -> data << endl;
     void GetLength(){
 cout << "length : "<< length << endl;
     }
+void append(int value){
+      Node* NewNode = new Node(value);
+       if( length == 0){
+           head = NewNode;
+           tail = NewNode;
+       }
+       else{
+           tail -> next = NewNode;
+           tail = NewNode;
+          } length++;
+   }
 };
 int main() {
-int n;
-cin >> n;
+int n,j;
+cin >> n >> j;
+cout << "the Linked List is:";
 LinkedList* MyLinkedList = new LinkedList(n);
+MyLinkedList -> append(j);
 MyLinkedList -> printList();
 MyLinkedList -> GetHead();
   MyLinkedList -> GetTail();
