@@ -1,0 +1,50 @@
+#include <iostream>
+using namespace std;
+class Node{
+    public:
+    int data;
+    Node* next;
+    Node(int value){
+        this -> data = value;
+        next = nullptr;
+    }
+};
+class LinkedList{
+    private:
+    Node* head;
+    Node* tail;
+    int length;
+    public:
+    LinkedList(int value){
+        Node* NewNode = new Node(value);
+        head = NewNode;
+        tail = NewNode;
+        length = 1;
+    }
+    void printList(){
+        Node* temp = head;
+        while(temp != 0){
+            cout << temp -> data << endl;
+            temp = temp -> next;
+        }
+    }
+    void GetHead(){
+cout << "head : "<< head -> data << endl;
+    }
+     void GetTail(){
+cout << "tail : "<< tail -> data << endl;
+    }
+    void GetLength(){
+cout << "length : "<< length << endl;
+    }
+};
+int main() {
+int n;
+cin >> n;
+LinkedList* MyLinkedList = new LinkedList(n);
+MyLinkedList -> printList();
+MyLinkedList -> GetHead();
+  MyLinkedList -> GetTail();
+  MyLinkedList -> GetLength();
+    return 0;
+}
